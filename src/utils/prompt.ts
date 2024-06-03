@@ -2,10 +2,11 @@ import type { CommitType } from './config.js';
 
 const commitTypeFormats: Record<CommitType, string> = {
 	'': '<commit message>',
-	conventional: '<type>(<optional scope>): <commit message>',
+	conventional:
+		'`<type>(<scope>): <commit message>`. you must always include the type and scope prefix in the commit message. the first letter of the commit message must always be lowercase.',
 };
 const specifyCommitFormat = (type: CommitType) =>
-	`The output response must be in format:\n${commitTypeFormats[type]}`;
+	`The output response must always be in format:\n${commitTypeFormats[type]}`;
 
 const commitTypes: Record<CommitType, string> = {
 	'': '',
